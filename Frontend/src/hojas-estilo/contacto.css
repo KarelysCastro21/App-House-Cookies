@@ -1,0 +1,92 @@
+.contact-page {
+    display: flex;
+    justify-content:c;
+    align-items: center;
+    height: 100vh;
+    background-color: transparent;
+    padding-top: 5px;
+    flex-wrap: wrap;
+  }
+
+
+.contact-page-wrapper {
+    position: relative;
+    background-color: #fe9e0d;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.743);
+    width: 520px;
+    height: 500px; 
+    border-radius: 50%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    left: 30px;
+}
+
+.text-contacto, .tex-card-gift1{
+    font-size: 30px;
+    margin-bottom: 20px;
+    margin-top: 1px;
+    color: #505050;
+    font-weight: 600;
+
+}
+
+
+.contact-input,
+.contact-textarea
+ {
+    width: 80%;
+    padding: 10px;
+    margin: 10px 0;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    border-radius: 50px;
+    outline: none;
+    align-items: center;
+}
+
+.button-contacto {
+
+    padding: 1rem 2.5rem;
+    background-color: #884A39;
+    outline: none;
+    border: none;
+    font-size: 1.1rem;
+    cursor: pointer;
+    font-weight: 600;
+    color: white;
+    border-radius: 5rem;
+    transition: 0.2s;
+    
+
+
+}
+
+.contact-textarea {
+    resize: vertical;
+}
+
+.contact-card {
+    width: 600px;
+    height: 450px; 
+    background-color: #f0d7d7;
+  
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.743);
+    text-align: center;
+  }
+  .tex-card-gift2{
+    color: #403f3f;
+    padding-bottom: 35px;
+  }
+  .tarjeta-regalo{
+    max-width: 500px;
+    max-height: 450px; 
+    cursor: pointer;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.906);
+    margin-left: 50px;
+    
+
+  }

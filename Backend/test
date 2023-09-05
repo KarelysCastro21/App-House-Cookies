@@ -1,0 +1,17 @@
+{
+  "name": "Enviar Consulta",
+  "method": "POST",
+  "url": "http://localhost:8080/api/Consulta",
+  "headers": {
+    "Content-Type": "application/json"
+  },
+  "body": {
+    "nombre": "John",
+    "apellido": "Doe",
+    "asunto": "Consulta sobre...",
+    "consulta": "Mi consulta..."
+  }
+}
+
+
+

@@ -1,0 +1,46 @@
+
+[
+    {
+        "id": 1,
+    "name": "Cookies 100gr",
+    "Description": "5 cookies ",
+    "Price": 10,
+    "img": "cookies.jpeg"
+    },
+
+    {"id": 2,
+    "name": "Cookies 200gr",
+    "Description": "10 cookies ",
+    "Price": 20,
+    "img":"cookies.jpeg"
+    },
+
+    {"id": 3,
+    "name": "Box 500gr",
+    "Description": "25  cookies ",
+    "Price": 100,
+    "img": "box500.jpeg"
+    },
+
+    {"id": 4,
+    "name": "Duo Box Brownies",
+    "Description": " 2 Brownies ",
+    "Price": 100,
+    "img": "duoboxbrownies.jpeg"
+    
+    },
+    {"id": 5,
+    "name": "Box mix",
+    "Description": "100gr + Brownie ",
+    "Price": 100,
+    "img": "boxmix.jpeg"
+    },
+
+    {"id": 6,
+    "name": "Alfajores",
+    "Description": "6 alfajores Maicena ",
+    "Price": 100,
+    "img": "alfajores.jpg"
+    }
+
+    ]

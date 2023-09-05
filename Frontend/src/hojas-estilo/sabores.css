@@ -1,0 +1,48 @@
+.sabores-card {
+  flex: 0 0 200px;
+  border: none; /* Quita el borde */
+}
+
+.sabores-image {
+  cursor: pointer;
+}
+
+.sabores-slider-container {
+  overflow: hidden;
+  margin-top: 15rem;
+}
+
+.sabores-button {
+  background-color: #f8f6f6;
+  color: #000000;
+  transition: background-color 0.3s ease-in-out;
+  font-size: 40px;
+  padding: 5px;
+}
+
+.sabores-button:hover {
+  background-color: rgb(175, 115, 5);
+}
+
+.sabores-slider {
+  display: flex;
+  align-items: center;
+  border: none;
+}
+
+.sabores-button-left,
+.sabores-button-right {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+  background-color: #f8f6f6;
+  color: #000000;
+  transition: background-color 0.3s ease-in-out;
+  font-size: 40px;
+  padding: 5px;
+}
+
+.sabores-button-right {
+  right: 10px;
+}
