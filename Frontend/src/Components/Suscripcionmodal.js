@@ -35,7 +35,7 @@ const SubscriptionModal = ({ isOpen, onClose }) => {
       const formattedCumpleaños = `${dia}/${mes}`;
 
       // Realiza una solicitud GET para verificar si el usuario ya está registrado
-      const getUserResponse = await axios.get(`http://localhost:8080/api/usuarios?email=${trimmedEmail}`);
+      const getUserResponse = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/api/usuarios?email=${trimmedEmail}`);
 
       if (getUserResponse.status === 200) {
         setIsRegistered(true);
@@ -45,7 +45,7 @@ const SubscriptionModal = ({ isOpen, onClose }) => {
 
         // Usuario ya registrado, realiza la solicitud PUT para actualizarlo
         const userId = getUserResponse.data.userId;
-        const response = await axios.put(`http://localhost:8080/api/usuarios/${userId}`, {
+        const response = await axios.put(`${process.env.REACT_APP_BACKEND_URL}/api/usuarios/${userId}`, {
           email: trimmedEmail,
           nombreApellido,
           cumpleaños: formattedCumpleaños,
@@ -58,7 +58,7 @@ const SubscriptionModal = ({ isOpen, onClose }) => {
         }
       } else if (getUserResponse.status === 404) {
         // Usuario no registrado, realiza la solicitud POST para registrarlo
-        const response = await axios.post('http://localhost:8080/api/usuarios', {
+        const response = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/api/usuarios`, {
           email: trimmedEmail,
           nombreApellido,
           cumpleaños: formattedCumpleaños,

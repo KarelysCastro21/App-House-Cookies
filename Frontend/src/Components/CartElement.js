@@ -1,7 +1,6 @@
 import { useContext } from "react";
 import { Card, CardContent, CardMedia, Typography, IconButton } from '@mui/material';
 import DeleteIcon from '@mui/icons-material/Delete';
-import Box from '@mui/material/Box';
 import { dataContext } from '../Components/DataContext';
 import '../hojas-estilo/Product.css';
 import ShoppingCartRoundedIcon from "@mui/icons-material/ShoppingCartRounded";

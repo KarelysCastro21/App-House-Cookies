@@ -46,7 +46,7 @@ const Contacto = () => {
     }
   
       try {
-        const response = await axios.post('http://localhost:8080/api/Consulta', {
+        const response = await axios.post( `${process.env.REACT_APP_BACKEND_URL}/api/Consulta`, {
           email,
           asunto,
           consulta,
