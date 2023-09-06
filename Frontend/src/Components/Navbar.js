@@ -45,7 +45,7 @@ export const Navbar = () => {
 
     const tiendaLocation = async () => {
       try {
-        const response = await axios.get('http://localhost:8080/api/Location');
+        const response = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/api/Location`);
         const { url } = response.data;
         window.open(url, '_blank'); // Abre en una nueva pestaña
     } catch (error) {
