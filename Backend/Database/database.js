@@ -3,7 +3,7 @@ require('dotenv').config();
 
 const dbConnection = async () => {
     try {
-        const connectionString = `mongodb+srv://karelysDev:${process.env.CONNECTION_STRING}@cluster0.mmhf5nk.mongodb.net/`;
+        const connectionString =`mongodb+srv://karelysDev:${process.env.CONNECTION_STRING}@cluster0.mmhf5nk.mongodb.net/`;
         await mongoose.connect(connectionString, {
             useNewUrlParser: true,
             useUnifiedTopology: true,
