@@ -10,6 +10,12 @@ axios.defaults.validateStatus = function (status) {
   return true; // Incluso se manejarán los códigos de estado no válidos
 };
 
+const isProduction = process.env.NODE_ENV === 'production';
+
+const apiUrl = isProduction
+  ? process.env.REACT_APP_BACKEND_URL // URL de producción en Vercel
+  : 'http://localhost:8080'; // URL local en desarrollo
+
 const SubscriptionModal = ({ isOpen, onClose }) => {
   const [email, setEmail] = useState('');
   const [nombreApellido, setNombreApellido] = useState('');
@@ -18,7 +24,7 @@ const SubscriptionModal = ({ isOpen, onClose }) => {
   const [registroExitoso, setRegistroExitoso] = useState(false);
   const [userId, setUserId] = useState(null);
   const [isRegistered, setIsRegistered] = useState(false);
-  const [isUpdating, setIsUpdating] = useState(false);
+
 
   const handleSubscribe = async () => {
     try {
@@ -35,30 +41,18 @@ const SubscriptionModal = ({ isOpen, onClose }) => {
       const formattedCumpleaños = `${dia}/${mes}`;
 
       // Realiza una solicitud GET para verificar si el usuario ya está registrado
-      const getUserResponse = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/api/usuarios?email=${trimmedEmail}`);
+      const getUserResponse = await axios.get(`${apiUrl}/api/usuarios?email=${trimmedEmail}`);
 
       if (getUserResponse.status === 200) {
         setIsRegistered(true);
         setUserId(getUserResponse.data.userId);
-        setIsUpdating(true)
+       
 
 
-        // Usuario ya registrado, realiza la solicitud PUT para actualizarlo
-        const userId = getUserResponse.data.userId;
-        const response = await axios.put(`${process.env.REACT_APP_BACKEND_URL}/api/usuarios/${userId}`, {
-          email: trimmedEmail,
-          nombreApellido,
-          cumpleaños: formattedCumpleaños,
-        });
-
-        if (response.status === 200) {
-          console.log('Usuario actualizado exitosamente');
-          setIsUpdating(true);
-          setRegistroExitoso(false);
-        }
+       
       } else if (getUserResponse.status === 404) {
         // Usuario no registrado, realiza la solicitud POST para registrarlo
-        const response = await axios.post(`${process.env.REACT_APP_BACKEND_URL}/api/usuarios`, {
+        const response = await axios.post(`${apiUrl}/api/usuarios`, {
           email: trimmedEmail,
           nombreApellido,
           cumpleaños: formattedCumpleaños,
@@ -67,7 +61,7 @@ const SubscriptionModal = ({ isOpen, onClose }) => {
         if (response.status === 201) {
           console.log('Registro exitoso');
           setRegistroExitoso(true);
-          setIsUpdating(false);
+          
           setTimeout(onClose, 3000);
         }
       }
@@ -81,7 +75,7 @@ const SubscriptionModal = ({ isOpen, onClose }) => {
     try {
       if (userId) {
         // Realizar la solicitud PUT con el ID del usuario
-        const response = await axios.put(`http://localhost:8080/api/usuarios/${userId}`, {
+        const response = await axios.put(`${apiUrl}/api/usuarios/${userId}`, {
           email,
           nombreApellido,
           cumpleaños,
@@ -89,8 +83,9 @@ const SubscriptionModal = ({ isOpen, onClose }) => {
 
         if (response.status === 200) {
           console.log('Usuario actualizado exitosamente');
-          setIsUpdating(true);
+        
           setRegistroExitoso(false);
+          setTimeout(onClose, 3000);
         }
       } else {
         console.log('No se puede actualizar el usuario sin un ID');
@@ -101,6 +96,7 @@ const SubscriptionModal = ({ isOpen, onClose }) => {
   };
 
   const buttonText = isRegistered ? 'Actualizar Datos' : 'Suscribirse';
+
 
 
   return (
@@ -116,12 +112,9 @@ const SubscriptionModal = ({ isOpen, onClose }) => {
                 <Close />
               </IconButton>
             </div>
-            {registroExitoso && !isUpdating && (
-              <p className="success-message">Gracias por suscribirte</p>
-            )}
-            {isUpdating && (
-              <p className="success-message">Actualización exitosa</p>
-            )}
+            {registroExitoso &&  (
+              <p className="success-message">Gracias por suscribirte</p>)
+             }
             {errorMessage && (
               <p className="error-message">{errorMessage}</p>
             )}

@@ -35,7 +35,7 @@ class Server {
     middlewares() {
 
         this.app.use(cors({
-            origin: 'https://app-house-cookies-arg.vercel.app', // Cambia esto por la URL de tu frontend
+            origin:['https://app-house-cookies-arg.vercel.app', 'http://localhost:8080'], // Cambia esto por la URL de tu frontend
             methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
             credentials: true,
         }));
