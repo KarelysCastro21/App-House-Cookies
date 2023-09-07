@@ -24,9 +24,39 @@
     left: 30px;
 }
 
+@media screen and (max-width: 564px) {
+
+  .contact-page{
+    height: auto;
+  }
+  .contact-page-wrapper {
+    position: static;
+      height:auto; /* Altura automática para adaptarse al contenido */
+      border-radius: 10px; /* Eliminar el redondeo */
+      text-align: center;
+      margin: 20px auto;
+      padding: 20px;
+      margin-bottom: 20px; 
+
+  }
+  .contact-textarea {
+    height: 100px;
+}
+
+.contact-input{
+  margin: 2px;
+}
+
+
+}
+
+.contact-form-container{
+
+  margin-top: 30px;
+}
 .text-contacto, .tex-card-gift1{
-    font-size: 30px;
-    margin-bottom: 20px;
+    font-size: 25px;
+    margin-bottom: 10px;
     margin-top: 1px;
     color: #505050;
     font-weight: 600;
@@ -37,23 +67,24 @@
 .contact-input,
 .contact-textarea
  {
-    width: 80%;
-    padding: 10px;
-    margin: 10px 0;
+    width: 90%;
+    padding: 8px;
+    margin: 5px 0 ;
     border: none;
     border-bottom: 1px solid #ccc;
-    border-radius: 50px;
+    border-radius:30px;
     outline: none;
-    align-items: center;
+    
+    
 }
 
 .button-contacto {
-
-    padding: 1rem 2.5rem;
+    height: 50px;
+    padding: 10px 20px;
     background-color: #884A39;
     outline: none;
     border: none;
-    font-size: 1.1rem;
+    font-size: 1rem;
     cursor: pointer;
     font-weight: 600;
     color: white;
@@ -66,6 +97,8 @@
 
 .contact-textarea {
     resize: vertical;
+    height: 100px;
+  margin-bottom: 10px;
 }
 
 .contact-card {

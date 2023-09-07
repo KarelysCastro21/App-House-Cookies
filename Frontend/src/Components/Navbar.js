@@ -15,33 +15,7 @@ import LocationOnIcon from '@mui/icons-material/LocationOn';
 export const Navbar = () => {
 
     const [openMenu, setOpenMenu] = useState(false)
-   
-    const menuOptions = [
-      {
-        text: "Home",
-        icon: <HomeIcon />,
-      },
-      {
-        text: "Menú",
-        icon: <RestaurantMenuIcon />,
-      },
-      {
-        text: "Sabores",
-        icon: <CookieIcon />,
-      },
-      {
-        text: "Contacto",
-        icon: <PhoneRoundedIcon />,
-      },
-      {
-        text: "Cart",
-        icon: <ShoppingCartRoundedIcon />,
-      },
-      {
-        text: "Localizar Tienda",
-        icon: <LocationOnIcon/>
-      }
-    ];
+
 
     const tiendaLocation = async () => {
       try {
@@ -52,14 +26,49 @@ export const Navbar = () => {
       
         console.error(error);
       }
-    };;
+    };
+   
+    const menuOptions = [
+      {
+        text: "Home",
+        icon: <HomeIcon />,
+        
+      },
+      {
+        text: "Menú",
+        icon: <RestaurantMenuIcon />,
+      
+      },
+      {
+        text: "Sabores",
+        icon: <CookieIcon />,
+        
+      },
+      {
+        text: "Contacto",
+        icon: <PhoneRoundedIcon />,
+       
+      },
+      {
+        text: "Cart",
+        icon: <ShoppingCartRoundedIcon />,
+        link: '/carrito',
+      },
+      {
+        text: "Localizar Tienda",
+        icon: <LocationOnIcon/>,
+        action: tiendaLocation,
+      }
+    ];
+
+    
 
   return (
     <nav>
        
       <div className="nav-logo-container">
         <img src={Logo} alt="Logo" className='logo-image' />
-        <p class="logo-text">House Cookies Arg</p>
+        <p className="logo-text">House Cookies Arg</p>
       </div>
       <div className="navbar-links-container">
         <a href="/">Home</a>
@@ -72,7 +81,8 @@ export const Navbar = () => {
         <button className="primary-button" onClick={tiendaLocation}>Localizar Tienda <LocationOnIcon/></button>
       </div>
       <div className="navbar-menu-container">
-        <HiOutlineBars3 onClick={() => setOpenMenu(true)} />
+        <HiOutlineBars3 onClick={() => setOpenMenu(true)} className="menu-icon" />
+ 
       </div>
       <Drawer open={openMenu} onClose={() => setOpenMenu(false)} anchor="right">
         <Box
@@ -83,6 +93,7 @@ export const Navbar = () => {
         >
           <List>
             {menuOptions.map((item) => (
+              
               <ListItem key={item.text} disablePadding>
                 <ListItemButton>
                   <ListItemIcon>{item.icon}</ListItemIcon>

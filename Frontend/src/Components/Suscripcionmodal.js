@@ -44,11 +44,10 @@ const SubscriptionModal = ({ isOpen, onClose }) => {
       const getUserResponse = await axios.get(`${apiUrl}/api/usuarios?email=${trimmedEmail}`);
 
       if (getUserResponse.status === 200) {
+        console.log('Usuario ya se encuentra registrado');
         setIsRegistered(true);
         setUserId(getUserResponse.data.userId);
-       
-
-
+      
        
       } else if (getUserResponse.status === 404) {
         // Usuario no registrado, realiza la solicitud POST para registrarlo
@@ -91,7 +90,8 @@ const SubscriptionModal = ({ isOpen, onClose }) => {
         console.log('No se puede actualizar el usuario sin un ID');
       }
     } catch (error) {
-      // ... (manejo de errores)
+      console.error('Error al suscribirse:', error);
+      setErrorMessage('Error al suscribirse: ' + error.message);
     }
   };
 
@@ -118,7 +118,7 @@ const SubscriptionModal = ({ isOpen, onClose }) => {
             {errorMessage && (
               <p className="error-message">{errorMessage}</p>
             )}
-            <h2>{isRegistered ? 'Usted ya se encuentra registrado' : 'SUSCRIPCIÓN'}</h2>
+            <h2>{isRegistered ? 'Correo Electronico Existente ¿Desea Actualizar sus Datos?' : 'Suscripción'}</h2>
             <TextField
               label="Email"
               fullWidth

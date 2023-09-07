@@ -57,6 +57,19 @@ nav {
   
 }
 
+@media screen and (max-width: 600px) {
+  .logo-image {
+      max-height: 120px; 
+      max-width: 160px; 
+      margin-top: 3px;
+   justify-content: center;
+  }
+  .home-bannerImage-container {
+    order: -1;
+}
+
+}
+
 .logo-text {
   margin-top: 4px; 
   font-size: 1rem;
@@ -407,11 +420,5 @@ nav {
   }
   .App {
     max-width: 95vw;
-  }
-}
-@media (max-width: 600px) {
-  .home-bannerImage-container,
-  .about-background-image-container {
-    display: none;
   }
 }
