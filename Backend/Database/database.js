@@ -3,7 +3,6 @@ const mongoose = require('mongoose');
 
 const dbConnection = async () => {
     try {
-        
         await mongoose.connect(process.env.CONNECTION_STRING, {
             useNewUrlParser: true,
             useUnifiedTopology: true,
