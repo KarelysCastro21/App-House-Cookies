@@ -3,7 +3,7 @@ import axios from 'axios';
 import { Modal, Paper, TextField, Button, IconButton } from '@mui/material';
 import { Email, Person, Cake, Close } from '@mui/icons-material';
 import '../hojas-estilo/modal.css';
-import Suscribete from '../Assets/suscripcion.png';
+import Suscribete from '../Assets/suscripcion.jpg';
 
 
 axios.defaults.validateStatus = function (status) {
@@ -127,6 +127,7 @@ const SubscriptionModal = ({ isOpen, onClose }) => {
               placeholder="Ingresa tu correo electrónico"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
+              style={{ marginBottom: '16px' }} 
             />
             <TextField
               label="Nombre y Apellido"
@@ -136,6 +137,7 @@ const SubscriptionModal = ({ isOpen, onClose }) => {
               placeholder="Ingresa tu nombre y apellido"
               value={nombreApellido}
               onChange={(e) => setNombreApellido(e.target.value)}
+              style={{ marginBottom: '16px' }} 
             />
             <TextField
               label="Cumpleaños"
@@ -145,6 +147,7 @@ const SubscriptionModal = ({ isOpen, onClose }) => {
               placeholder="Dia / Mes"
               value={cumpleaños}
               onChange={(e) => setCumpleaños(e.target.value)}
+              style={{ marginBottom: '16px' }} 
             />
             <div className="button-container">
               <Button

@@ -5,6 +5,7 @@ import  { useContext } from "react";
 import { dataContext } from '../Components/DataContext';
 import BannerBackground from '../Assets/home-banner-background.png';
 import CartElement from "./CartElement";
+import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 import '../hojas-estilo/Product.css';
 import CartTotal from "./CartTotal";
 import { Link } from 'react-router-dom';
@@ -36,8 +37,12 @@ const ComprarProductos = () => {
   return (
     <div className="carrito-container">
       <div className="header">
-        <h1 className="primary-heading">Menú</h1>
-       
+          <Link to="/" style={{ textDecoration: 'none', color: 'inherit' }}>
+              <ArrowBackIcon /> 
+              Volver 
+          </Link>
+          <h1 className="primary-heading" >Menú</h1>
+          
         <Link to="/">
         <div className="carrito-logo-container">
           <img src={Logo} alt="Logo" className="logo-image" />

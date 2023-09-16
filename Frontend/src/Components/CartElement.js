@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { Card, CardContent, CardMedia, Typography, IconButton } from '@mui/material';
+import { IconButton, Typography, Grid, Card, CardContent, CardMedia } from "@mui/material";
 import DeleteIcon from '@mui/icons-material/Delete';
 import { dataContext } from '../Components/DataContext';
 import '../hojas-estilo/Product.css';
@@ -38,49 +38,53 @@ const CartElement = () => {
     
   
     return (
-      <div className="cart-container">
-    <Typography variant="h6" gutterBottom style={{ fontWeight: "bold", textAlign: "right" }}>
-      Carrito de Compras <ShoppingCartRoundedIcon />
-    </Typography>
-    {mergedCart.map((product) => (
-      <Card key={product.id} className="cartContent" sx={{ display: 'flex' }}>
       
-          <CardMedia
-            component="img"
-            sx={{ width: 151 }}
-            image={product.img}
-            alt={product.name}
-            className="image"
-          />
-           
-          <CardContent sx={{ flex: '1 0 auto' }}>
-            
-            <Typography className="name">
-              {product.name}
-            </Typography>
-            <Typography color="text.secondary" className="Description">
-              {product.Description}
-            </Typography>
-            <Typography className="Price">
-              ${product.Price * product.quantity} {/* Multiplica el precio por la cantidad */}
-            </Typography>
-            <Typography color="text.secondary">
-              Cantidad: {product.quantity}
-            </Typography>
-            <IconButton
-              aria-label="Eliminar"
-              color="primary"
-              onClick={() => handleDeleteItem(product.id)}
-            >
-              <DeleteIcon style={{ color: "black" }} />
-            </IconButton>
-          </CardContent>
-      
-          
-      </Card>
-    ))}
-  </div>
-);
-  };
-  
-  export default CartElement;
+        <div className="cart-container">
+          <Typography
+            variant="h6"
+            gutterBottom
+            style={{ fontWeight: "bold", textAlign: "right" }}
+          >
+            Carrito de Compras <ShoppingCartRoundedIcon />
+          </Typography>
+          {mergedCart.map((product) => (
+            <Card key={product.id} className="cartContent">
+              <Grid container spacing={2}>
+                <Grid item xs={12} sm={4}>
+                  <CardMedia
+                    component="img"
+                    sx={{ width: 151 }}
+                    image={product.img}
+                    alt={product.name}
+                    className="image"
+                  />
+                </Grid>
+                <Grid item xs={12} sm={8}>
+                  <CardContent>
+                    <Typography className="name">{product.name}</Typography>
+                    <Typography color="text.secondary" className="Description">
+                      {product.Description}
+                    </Typography>
+                    <Typography className="Price">
+                      ${product.Price * product.quantity}
+                    </Typography>
+                    <Typography color="text.secondary">
+                      Cantidad: {product.quantity}
+                    </Typography>
+                    <IconButton
+                      aria-label="Eliminar"
+                      color="primary"
+                      onClick={() => handleDeleteItem(product.id)}
+                    >
+                      <DeleteIcon style={{ color: "black" }} />
+                    </IconButton>
+                  </CardContent>
+                </Grid>
+              </Grid>
+            </Card>
+          ))}
+        </div>
+      );
+    };
+    
+    export default CartElement;

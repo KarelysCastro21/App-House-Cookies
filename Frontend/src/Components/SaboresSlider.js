@@ -13,39 +13,36 @@ const SaboresSlider = () => {
             description: 'Chocolate Chip',
         },
         {
-            image: require('../Assets/doble-chocolate.png'),
-            description: 'Descripción de la Imagen 2',
+            image: require('../Assets/choco-white.png'),
+            description: 'choco white',
         },
         {
-            image: require('../Assets/chocolate-chip.png'),
-            description: 'Chocolate Chip',
+            image: require('../Assets/membrillo.png'),
+            description: 'membrillo',
         },
         {
-            image: require('../Assets/doble-chocolate.png'),
-            description: 'Descripción de la Imagen 2',
+            image: require('../Assets/polvorosas.jpg'),
+            description: 'polvorosa',
         },
+       
         {
-            image: require('../Assets/chocolate-chip.png'),
-            description: 'Chocolate Chip',
-        },
-        {
-            image: require('../Assets/doble-chocolate.png'),
-            description: 'Descripción de la Imagen 2',
+            image: require('../Assets/choco-rocklets.png'),
+            description: 'Choco rocklets',
         }, {
-            image: require('../Assets/chocolate-chip.png'),
-            description: 'Chocolate Chip',
+            image: require('../Assets/alfacookie.png'),
+            description: 'Alfaccokies',
+        },
+        {
+            image: require('../Assets/festival.png'),
+            description: 'Festival ',
+        },
+        {
+            image: require('../Assets/alfajores.png'),
+            description: 'Alfajores',
         },
         {
             image: require('../Assets/doble-chocolate.png'),
-            description: 'Descripción de la Imagen 2',
-        },
-        {
-            image: require('../Assets/chocolate-chip.png'),
-            description: 'Chocolate Chip',
-        },
-        {
-            image: require('../Assets/doble-chocolate.png'),
-            description: 'Descripción de la Imagen 2',
+            description: 'Doble Chocolate',
         },
 
 

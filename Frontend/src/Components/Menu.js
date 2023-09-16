@@ -1,7 +1,7 @@
 import React from 'react'
 import AboutBackground from "../Assets/about-background.png";
 import AboutBackgroundImage from "../Assets/about-background-image.png";
-
+import { Link } from 'react-router-dom';
 
 
 const Menu = () => {
@@ -27,7 +27,7 @@ const Menu = () => {
         facilisis at fringilla quam.
       </p>
       <div className="Menu-buttons-container">
-        <button className="secondary-button">Ir al Menú</button>
+        <button className="secondary-button"><Link to={'/carrito'}>Ir al Menú</Link></button>
         
        
       </div>
@@ -37,4 +37,4 @@ const Menu = () => {
 };
 
 
-export default Menu
+export default Menu;

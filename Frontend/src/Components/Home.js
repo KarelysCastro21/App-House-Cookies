@@ -1,10 +1,9 @@
 import React from 'react'
-
 import { Navbar } from './Navbar'
 import BannerBackground from '../Assets/home-banner-background.png';
 import BannerImage from '../Assets/home-banner-image.png';
 import { FiArrowRight } from 'react-icons/fi';
-import { Menu } from '@mui/material';
+import Menu from './Menu'
 import SaboresSlider from './SaboresSlider';
 import Delivery from './Delivery';
 import Contacto from './Contacto';
